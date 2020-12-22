@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
+import { TaskRestControllerService } from './services/task/api/taskRestController.service';
+import {MatSelectModule} from '@angular/material/select';
+
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -49,7 +53,10 @@ import { TaskListComponent } from './task-list/task-list.component';
     FormsModule,
     MatDialogModule,
     HttpModule,
+    HttpClientModule,
+    MatSelectModule,
   ],
+  providers: [TaskRestControllerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

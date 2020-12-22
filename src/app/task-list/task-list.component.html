@@ -8,21 +8,22 @@
 <h1>Junior Academia Everis</h1>
 <div class="inicio">
 	<h1>TO-DO LIST</h1>
-	<div class="group"><input type="button" value="New task"  (click)="newTask(newdescription)">
-    <input type="text" placeholder="New Task" [(ngModel)]="newdescription"></div>
-	<div class="container" *ngFor="let q of tasks">
+	<div class="group"><input type="button" value="New task"  (click)="createTask(newdescription.value)">
+    <input type="text" placeholder="New Task" #newdescription></div>
+	<div class="container" *ngFor="let q of tasks; index as idx">
 		<p>Task id {{q.id}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{q.description}}
-			<button mat-raised-button (click)="remove(q)" style= "float:right;">
+			<button mat-raised-button (click)="remove(q.id)" style= "float:right;">
             <mat-icon>delete</mat-icon>
         	</button></p>
-		<div class="dropdown menu">
-			<select id="status" name="status"
-				class="form-control">
-			<option *ngFor="let st of status" [value]="st.id" [selected]="q.task_status==st.name ? true: null">
-			{{st.name}}
-			</option>	
-			</select>
-		</div>
+		<div class="col-12 row p-0 m-0 mt-2 justify-content-start align-baseline">
+            <mat-form-field appearance="fill">
+              <mat-select [(value)]="q.taskStatus" [placeholder]="q.taskStatus" (selectionChange)="updateTask(idx)">
+                <mat-option *ngFor="let st of status" [value]="st.value">
+                  {{st.label}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
 	</div>
 </div>
 </body>
