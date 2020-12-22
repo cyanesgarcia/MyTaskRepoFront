@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Everis DAR</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+<body>
+<h1>Junior Academia Everis</h1>
+<div class="inicio">
+	<h1>TO-DO LIST</h1>
+	<input type="button" value="New task"  (click)="newTask(newdescription)">
+	<mat-form-field>
+    <input type="text" placeholder="New Task" [(ngModel)]="newdescription">
+	</mat-form-field>
+	<div class="container" *ngFor="let q of tasks">
+		<p>Task id {{q.id}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{q.description}}
+			<button mat-raised-button (click)="remove(q.id)" style= "float:right;">
+            <mat-icon>restore_from_trash</mat-icon>
+        	</button></p>
+		<div class="dropdown menu">
+			<select id="status" name="status"
+				class="form-control">
+			<option *ngFor="let st of status" [value]="st.id" [selected]="q.task_status==st.name ? true: null">
+			{{st.name}}
+			</option>	
+			</select>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+.inicio {
+	width: 800px;
+    margin: 0 auto;
+    font-family: Pangolin, cursive;
+    padding: 10px;
+    border-style: outset;
+}
+
+h1{
+    text-align: center;
+}
+
+input{
+    float: right;
+}
+
+input[type="text"]{
+	border-radius: 5px;
+	border-color:#ADABE8;
+    background-color: #F1FBFF;
+    float: center;
+	
+}
+input[type="button"]{
+	background-color: #A75AA7;
+	font-size: 15px;
+	color: white;
+	padding: 2px 5px;
+	border-radius: 8px;
+}
+input[type="button"]:hover{
+	background-color: black;
+	font-size: 15px;
+	color: white;
+	padding: 2px 5px;
+	border-radius: 8px;
+}
+
+.container{
+    background-color: #A75AA7;
+    padding: 5px;
+    margin:5px;
+}
+
+.button{
+    height: 20px;
+    margin:5px;
+}
