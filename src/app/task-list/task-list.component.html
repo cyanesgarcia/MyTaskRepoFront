@@ -8,14 +8,12 @@
 <h1>Junior Academia Everis</h1>
 <div class="inicio">
 	<h1>TO-DO LIST</h1>
-	<input type="button" value="New task"  (click)="newTask(newdescription)">
-	<mat-form-field>
-    <input type="text" placeholder="New Task" [(ngModel)]="newdescription">
-	</mat-form-field>
+	<div class="group"><input type="button" value="New task"  (click)="newTask(newdescription)">
+    <input type="text" placeholder="New Task" [(ngModel)]="newdescription"></div>
 	<div class="container" *ngFor="let q of tasks">
 		<p>Task id {{q.id}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{q.description}}
-			<button mat-raised-button (click)="remove(q.id)" style= "float:right;">
-            <mat-icon>restore_from_trash</mat-icon>
+			<button mat-raised-button (click)="remove(q)" style= "float:right;">
+            <mat-icon>delete</mat-icon>
         	</button></p>
 		<div class="dropdown menu">
 			<select id="status" name="status"

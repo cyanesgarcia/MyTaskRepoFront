@@ -18,7 +18,8 @@ input[type="text"]{
 	border-radius: 5px;
 	border-color:#ADABE8;
     background-color: #F1FBFF;
-    float: center;
+	float: center;
+	font-size: 15px;
 	
 }
 input[type="button"]{
@@ -42,7 +43,9 @@ input[type="button"]:hover{
     margin:5px;
 }
 
-.button{
-    height: 20px;
-    margin:5px;
+button{
+	margin:5px;
+}
+.group{
+	padding-bottom:50px;
 }

@@ -42,12 +42,11 @@ export class TaskListComponent implements OnInit {
 
   remove(item: Task) {
     console.log("eleminando el elemento " + item.id);
-    const index = this.tasks.indexOf(item);
-    this.tasks.splice(index, 1);
+    this.tasks.splice(this.tasks.indexOf(item), 1);
   }
 
   newTask(newdescription: string) {
-    this.tasks.push({ id: this.tasks.length+1, task_status: "In progress", description: newdescription });
+    this.tasks.push({ id: this.tasks.length+1, task_status: "Pending", description: newdescription });
       
   }
 
