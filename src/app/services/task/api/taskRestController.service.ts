@@ -26,7 +26,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class TaskRestControllerService {
 
-    protected basePath = 'http://localhost:8080';
+    protected basePath = 'https://claudiaeveris.azure-api.net';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
